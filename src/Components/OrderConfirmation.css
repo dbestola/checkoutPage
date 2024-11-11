@@ -1,0 +1,176 @@
+@import url('https://fonts.googleapis.com/css2?family=Annie+Use+Your+Telescope&display=swap');
+
+* {
+    font-family: "Annie Use Your Telescope", cursive;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 15px;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #f5f5f5;
+    z-index: 1;
+    position: relative;
+}
+
+.receipt {
+    height: fit-content;
+    width: 30vw;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.5);
+    z-index: 2;
+    position: relative;
+}
+
+#confirmation-message {
+    background-color: yellowgreen;
+    margin: 5px;
+    border: black solid 1px;
+}
+
+#confirmation-details {
+    border: yellowgreen solid 1px;
+    margin: 5px;
+    border-radius: 5px;
+}
+
+.alertMessage {
+    animation: bounce 2.5s ease-in infinite;
+    color: red;
+}
+
+.print {
+    background-color: red;
+    color: #fff;
+    width: 150px;
+    font-size: 15px;
+    border-radius: .5rem;
+    border-style: hidden;
+    cursor: pointer;
+}
+
+.logo {
+    background-color: black;
+    margin: 5px;
+    padding: 5px;
+    border-radius: 10px;
+    height: 14vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo span {
+    color: #fff;
+}
+
+.logo img {
+    margin-top: -1rem;
+}
+
+.continue-shopping {
+    background-color: red;
+    width: 150px;
+    height: 25px;
+    border-radius: 10px;
+    padding: 0 4px;
+}
+
+.continue-shopping a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.continue-shopping:hover a {
+    color: greenyellow;
+    cursor: pointer;
+}
+
+.button-container {
+    display: flex;
+    width: fit-content;
+    margin-top: 2rem;
+    gap: 4rem;
+    z-index: 2;
+    position: relative;
+}
+
+.ribbon-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.ribbon {
+    position: absolute;
+    opacity: 0;
+    animation: float 3s linear infinite;
+}
+
+@keyframes float {
+    0% {
+        opacity: 1;
+        transform: translateY(-100px) rotate(0deg);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(calc(100vh + 100px)) rotate(720deg);
+    }
+}
+
+.circle {
+    border-radius: 50%;
+}
+
+.square,
+.rectangle {
+    border-radius: 5%;
+}
+
+.triangle {
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 20px solid;
+    background: transparent;
+}
+
+@keyframes bounce {
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        transform: translateY(0);
+    }
+
+    40% {
+        transform: translateY(-25px);
+    }
+
+    60% {
+        transform: translateY(-15px);
+    }
+}
+
+/* media query */
+@media (max-width:1100px) {
+    .receipt {
+        width: 70vw;
+    }
+}
