@@ -77,7 +77,7 @@ const CheckoutForm = () => {
         localStorage.setItem('currentOrderId', orderDetails.orderId); // Save current order ID
 
         
-        // Use React Router to redirect to the order confirmation page
+        // Using React Router to redirect to the order confirmation page
         navigate('/OrderConfirmation'); 
 
       },
