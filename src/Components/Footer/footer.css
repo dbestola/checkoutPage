@@ -1,0 +1,111 @@
+/* General Footer Styling */
+.footer {
+    background-color: #1a1a1a;
+    color: #ccc;
+    padding: 2rem 1.5rem;
+    font-family: Arial, sans-serif;
+  }
+  
+  .footer-top {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: auto;
+    border-bottom: 1px solid #444;
+    padding-bottom: 1.5rem;
+  }
+  
+  /* Logo Styling */
+  .footer-logo {
+    max-width: 250px;  
+    height: auto;      
+    margin-bottom: 1rem;
+    margin-right: 10px;
+  }
+  
+  .footer-links,
+  .footer-payment {
+    flex: 1;
+    min-width: 200px;
+    margin: 1rem 0;
+  }
+  
+  /* Footer Links Styling */
+  .footer-links h3,
+  .footer-payment h3 {
+    color: #f0f0f0;
+    font-size: 1.1rem;
+    margin-bottom: 0.8rem;
+  }
+  
+  .footer-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .footer-links ul li {
+    margin: 0.4rem 0;
+    cursor: pointer;
+    color: #ccc;
+    transition: color 0.3s;
+  }
+  
+  .footer-links ul li:hover {
+    color: #f0f0f0;
+    text-decoration: underline;
+  }
+  
+  /* Payment Icons Styling */
+  .footer-payment {
+    text-align: center;
+  }
+  
+  .payment-logos {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    font-size: 2rem;
+  }
+  
+  .payment-icon {
+    color: #666;
+    transition: color 0.3s, transform 0.3s;
+  }
+  
+  .payment-icon:hover {
+    color: #f39c12;
+    transform: scale(1.1);
+  }
+  
+  /* Bottom Footer Styling */
+  .footer-bottom {
+    text-align: center;
+    color: #888;
+    padding-top: 1rem;
+    font-size: 0.9rem;
+  }
+  
+  .footer-bottom p {
+    margin: 0;
+  }
+  
+  .footer-bottom p span {
+    color: #f39c12;
+  }
+  
+  /* Responsive Styling */
+  @media (max-width: 768px) {
+    .footer-top {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+  
+    .footer-links,
+    .footer-payment {
+      margin-bottom: 1rem;
+    }
+  }
+  

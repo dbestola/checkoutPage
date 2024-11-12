@@ -110,7 +110,7 @@ const CheckoutForm = () => {
   return (
 
     <div className="flex flex-col items-center p-6 bg-gray-100 min-h-screen">
-      <h1 className="text-2xl font-bold mb-4">
+      <h1 className="text-2xl font-bold mb-4" style={{marginTop:'100px'}}>
         Checkout Details
       </h1>
       <form id="form" onSubmit={handlePaystackPayment} className="w-full max-w-md bg-white p-6 rounded-lg shadow-md">
