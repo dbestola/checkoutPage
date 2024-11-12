@@ -83,7 +83,7 @@ const OrderConfirmation = () => {
     };
 
     return (
-        <div>
+        <div className='section'>
             <div className="ribbon-container" id="ribbon-container"></div>
 
             <div className="receipt">
@@ -106,8 +106,8 @@ const OrderConfirmation = () => {
                 )}
 
                 <h3 className="alertMessage">
-                    Note that: you will present this receipt to claim your order when it arrives, <br />
-                    kindly keep record of it.
+                    Important Notice: <br />
+                    kindly keep record of your receipt.
                 </h3>
             </div>
 

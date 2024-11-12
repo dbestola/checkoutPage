@@ -1,7 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react"; 
 import { useNavigate } from "react-router-dom";
+import Preloader from "./Preloader";
 
 const CheckoutForm = () => {
+  const [isLoading, setIsLoading] = useState(true); // Initially show preloader
   const [isProcessing, setIsProcessing] = useState(false);
   const navigate = useNavigate(); // React Router navigate hook
 
@@ -14,9 +16,19 @@ const CheckoutForm = () => {
     return `TX-${timestamp}-${randomNumber}`;
   }
 
+    // Show preloader for a few seconds when page loads
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoading(false); // Hide preloader after 3 seconds
+    }, 3000); // Set the time for preloader visibility (3 seconds)
+
+    return () => clearTimeout(timer); // Cleanup the timer on component unmount
+  }, []);
+
   // Function to handle Paystack payment initiation
   const handlePaystackPayment = (event) => {
     event.preventDefault();
+    setIsProcessing(true); // Show preloader when payment starts
 
     // Getting form data so that i can pass this info to Paystack as metadata
     const form = event.target;
@@ -86,7 +98,15 @@ const CheckoutForm = () => {
     localStorage.setItem('orders', JSON.stringify(orders));
   }
 
-
+   // If the page is still loading, show the preloader
+   if (isLoading) {
+    return (
+      <div className="fixed inset-0 flex justify-center items-center bg-gray-100 z-50">
+        <Preloader />
+      </div>
+    );
+  }
+  
   return (
 
     <div className="flex flex-col items-center p-6 bg-gray-100 min-h-screen">

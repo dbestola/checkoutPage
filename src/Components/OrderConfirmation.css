@@ -1,13 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Annie+Use+Your+Telescope&display=swap');
 
-* {
-    font-family: "Annie Use Your Telescope", cursive;
-    font-weight: 600;
-    font-style: normal;
-    font-size: 15px;
-}
-
-body {
+.section {
     height: 100vh;
     display: flex;
     flex-direction: column;
