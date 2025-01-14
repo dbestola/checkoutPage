@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react"; 
 import { useNavigate } from "react-router-dom";
+import { Loader } from "lucide-react";
 import Preloader from "./Preloader";
 
 const CheckoutForm = () => {
@@ -83,6 +84,7 @@ const CheckoutForm = () => {
       },
       onClose: function () {
         alert("Payment was not completed.");
+        setIsProcessing(false);
       },
     });
 
@@ -113,7 +115,7 @@ const CheckoutForm = () => {
       <h1 className="text-2xl font-bold mb-4" style={{marginTop:'100px'}}>
         Checkout Details
       </h1>
-      <form id="form" onSubmit={handlePaystackPayment} className="w-full max-w-md bg-white p-6 rounded-lg shadow-md">
+      <form id="form" onSubmit={handlePaystackPayment} className="w-full max-w-[600px]  bg-white p-6 rounded-lg shadow-md">
         <h2 className="text-xl font-semibold mb-4">Shipping Address</h2>
 
         <div className="mb-4">
@@ -174,7 +176,11 @@ const CheckoutForm = () => {
           disabled={isProcessing}
           className="w-full bg-blue-500 text-white py-2 rounded-lg mt-4 hover:bg-blue-700 transition duration-300 ease-in-out"
         >
-          {isProcessing ? "Processing..." : "Proceed to Checkout"}
+          {isProcessing ? (
+                    <div className="flex justify-center items-center">
+                      <Loader className="h-4 w-4 text-primary-foreground animate-spin" />
+                    </div>
+                  ) : "Proceed to Checkout"}
         </button>
       </form>
     </div>
